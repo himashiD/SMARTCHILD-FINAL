@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-core
+langchain-community
+langchain-chroma
+langchain-google-genai
+google-generativeai
+pymupdf   
