@@ -1,0 +1,102 @@
+/* AdminLogin.css using your tokens */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.login-page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--indigo) 0%, var(--blue) 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  background: color-mix(in oklab, var(--card) 95%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid color-mix(in oklab, var(--card) 20%, transparent);
+}
+
+.logo { text-align: center; margin-bottom: 30px; }
+.logo h1 {
+  color: var(--ink);
+  font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--indigo), var(--blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo p { color: var(--muted); font-size: 1rem; opacity: .8; }
+
+.form-group { margin-bottom: 25px; position: relative; }
+.form-group label {
+  display: block; margin-bottom: 8px; color: var(--ink);
+  font-weight: 600; font-size: .95rem;
+}
+.form-group input {
+  width: 100%; padding: 15px 20px;
+  border: 2px solid var(--border); border-radius: 12px;
+  font-size: 1rem; transition: all .3s ease; background: var(--bg);
+  color: var(--ink);
+}
+.form-group input:focus {
+  outline: none; border-color: var(--indigo); background: var(--card);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--indigo) 15%, transparent);
+  transform: translateY(-2px);
+}
+.form-group input:hover { border-color: color-mix(in oklab, var(--border) 70%, var(--ink)); }
+
+.password-toggle {
+  position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 1.1rem; padding: 5px; margin-top: 15px;
+}
+.password-toggle:hover { color: var(--indigo); }
+
+.login-btn {
+  width: 100%; padding: 15px;
+  background: linear-gradient(135deg, var(--indigo), var(--blue));
+  color: #fff; border: none; border-radius: 12px;
+  font-size: 1.1rem; font-weight: 600; cursor: pointer;
+  transition: all .3s ease; margin-top: 10px; position: relative; overflow: hidden;
+}
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px color-mix(in oklab, var(--indigo) 30%, transparent);
+}
+.login-btn:active { transform: translateY(0); }
+.login-btn:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+
+.remember-forgot {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 20px 0; font-size: .9rem;
+}
+.remember { display: flex; align-items: center; gap: 8px; }
+.remember input[type="checkbox"] { width: auto; margin: 0; }
+.forgot-link { color: var(--indigo); text-decoration: none; transition: color .3s ease; }
+.forgot-link:hover { color: var(--blue); }
+
+.error-message,
+.success-message {
+  padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: .9rem;
+  display: block; background: var(--card);
+}
+.error-message { color: var(--red); border-left: 4px solid var(--red); background: #fee; }
+.success-message { color: #14532d; border-left: 4px solid var(--green); background: #efe; }
+
+.form-group input.error { border-color: var(--red); background: #fdf2f2; }
+.validation-message { color: var(--red); font-size: .85rem; margin-top: 5px; }
+
+.loading {
+  display: inline-block; width: 20px; height: 20px;
+  border: 2px solid #ffffff; border-radius: 50%;
+  border-top-color: transparent; animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 480px) {
+  .login-container { padding: 30px 20px; margin: 10px; }
+  .logo h1 { font-size: 2rem; }
+}
